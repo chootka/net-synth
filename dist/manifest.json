@@ -21,5 +21,6 @@
       "js/background.js"
     ]
   },
-  "browser_action": {}
+  "browser_action": {},
+  "content_security_policy": "script-src 'self' ; object-src 'self'"
 }

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <p>{{ defaultText }}</p>
+    UI for synthesizer and OSC control
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'SynthControls',
   mounted () {
     browser.runtime.sendMessage({})
   },

@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "osc": "^2.4.1",
+    "postcss": "^8.2.8",
+    "tone": "^14.8.14",
     "vue": "^3.0.0"
   },
   "devDependencies": {
