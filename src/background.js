@@ -8,7 +8,7 @@ let notebook    = {};
 
 // Initialize OSC over WS
 var oscPort = new osc.WebSocketPort({
-    url: "ws://localhost:8081", // URL to your Web Socket server.
+    url: "ws://localhost:5678", // URL to your Web Socket server.
     metadata: true
 });
 
@@ -93,7 +93,9 @@ function listener(details) {
 	console.log("notebook", notebook);
 
 	// synthesizer
-	synth.triggerAttackRelease(notebook[requestId], "8n"); // 8th note
+	setTimeout(function() {
+        synth.triggerAttackRelease(notebook[requestId], "8n"); // 8th note
+    }, 100);
 
 	// osc to SuperCollider
 	const msgs = {
@@ -125,7 +127,7 @@ function listener(details) {
         ]
     };
 
-    console.log("Sending packets", msgs, "to localhost:8081");
+    console.log("Sending packets", msgs, "to localhost:5678");
     oscPort.send(msgs);
 
 	return {};
